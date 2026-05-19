@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ site.description }}">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="{{ '/' | relative_url }}" class="site-title">🎬 Cinémathèque</a>
+    </nav>
+  </header>
+
+  <main class="site-content" role="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p>Fait avec ❤️ et du popcorn 🍿</p>
+  </footer>
+
+  <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+</body>
+</html>

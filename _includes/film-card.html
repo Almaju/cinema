@@ -1,0 +1,27 @@
+<article class="film-card">
+  <a href="{{ film.url | relative_url }}" class="film-card__link">
+    <header class="film-card__header">
+      <h2 class="film-card__title">{{ film.title }}</h2>
+
+      {% if film.note %}
+      <span class="film-card__stars" aria-label="Note : {{ film.note }} sur 5">
+        {% for i in (1..5) %}{% if i <= film.note %}★{% else %}☆{% endif %}{% endfor %}
+      </span>
+      {% endif %}
+    </header>
+
+    <p class="film-card__meta">
+      {% if film.annee %}<span class="film-card__year">{{ film.annee }}</span>{% endif %}
+      {% if film.annee and film.realisateur %}<span class="film-card__separator" aria-hidden="true">·</span>{% endif %}
+      {% if film.realisateur %}<span class="film-card__director">{{ film.realisateur }}</span>{% endif %}
+    </p>
+
+    {% if film.genre %}
+    <ul class="film-card__tags" aria-label="Genres">
+      {% for g in film.genre %}
+      <li class="tag">{{ g }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </a>
+</article>

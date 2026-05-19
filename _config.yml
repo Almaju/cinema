@@ -1,0 +1,37 @@
+# =============================================
+# Cinémathèque — Configuration Jekyll
+# =============================================
+
+title: "Cinémathèque"
+description: "Mon catalogue personnel de films"
+baseurl: "/cinema"
+url: "https://almaju.github.io"
+lang: "fr"
+
+# Collections
+collections:
+  films:
+    output: true
+    permalink: /films/:slug/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "films"
+    values:
+      layout: "film"
+
+# Build
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .sass-cache
+  - .jekyll-cache

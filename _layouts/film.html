@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<article class="film-detail">
+
+  <header class="film-detail__header">
+    <h1 class="film-detail__title">{{ page.title }}</h1>
+
+    {% if page.note %}
+    <div class="film-detail__rating" aria-label="Note : {{ page.note }} sur 5">
+      <span class="film-detail__stars">
+        {% for i in (1..5) %}{% if i <= page.note %}★{% else %}☆{% endif %}{% endfor %}
+      </span>
+      <span class="film-detail__rating-label">
+        {% if page.note == 5 %}Incontournable — « À voir absolument, a changé ma vie »
+        {% elsif page.note == 4 %}Excellent — « Très bon film, à revoir »
+        {% elsif page.note == 3 %}Bon moment — « Agréable, facile à regarder »
+        {% elsif page.note == 2 %}Pas fou — « Rien d'extraordinaire, prévisible »
+        {% elsif page.note == 1 %}Mauvais — « À éviter »
+        {% endif %}
+      </span>
+    </div>
+    {% endif %}
+  </header>
+
+  <dl class="film-detail__meta">
+    {% if page.annee %}
+    <div class="film-detail__meta-item">
+      <dt>Année</dt>
+      <dd>{{ page.annee }}</dd>
+    </div>
+    {% endif %}
+
+    {% if page.realisateur %}
+    <div class="film-detail__meta-item">
+      <dt>Réalisateur</dt>
+      <dd>{{ page.realisateur }}</dd>
+    </div>
+    {% endif %}
+
+    {% if page.genre %}
+    <div class="film-detail__meta-item">
+      <dt>Genre</dt>
+      <dd>
+        {% for g in page.genre %}
+        <span class="tag">{{ g }}</span>{% unless forloop.last %} {% endunless %}
+        {% endfor %}
+      </dd>
+    </div>
+    {% endif %}
+
+    {% if page.pays %}
+    <div class="film-detail__meta-item">
+      <dt>Pays</dt>
+      <dd>{{ page.pays }}</dd>
+    </div>
+    {% endif %}
+
+    {% if page.scenario %}
+    <div class="film-detail__meta-item">
+      <dt>Scénario</dt>
+      <dd>{{ page.scenario }}</dd>
+    </div>
+    {% endif %}
+
+    {% if page.acteurs %}
+    <div class="film-detail__meta-item">
+      <dt>Acteurs</dt>
+      <dd>{{ page.acteurs }}</dd>
+    </div>
+    {% endif %}
+
+    {% if page.date_watched %}
+    <div class="film-detail__meta-item">
+      <dt>Vu le</dt>
+      <dd>{{ page.date_watched }}</dd>
+    </div>
+    {% endif %}
+  </dl>
+
+  {% if page.imdb %}
+  <a href="{{ page.imdb }}" class="film-detail__imdb-link" target="_blank" rel="noopener noreferrer">
+    Voir sur IMDb ↗
+  </a>
+  {% endif %}
+
+  {% if content != "" %}
+  <section class="film-detail__review">
+    {{ content }}
+  </section>
+  {% endif %}
+
+  <nav class="film-detail__back" aria-label="Retour">
+    <a href="{{ '/' | relative_url }}">← Retour au catalogue</a>
+  </nav>
+
+</article>

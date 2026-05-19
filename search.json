@@ -1,0 +1,16 @@
+---
+layout: null
+---
+[
+{% for film in site.films %}
+  {
+    "title": "{{ film.title | escape }}",
+    "url": "{{ film.url | relative_url }}",
+    "note": {{ film.note }},
+    "annee": {{ film.annee }},
+    "realisateur": "{{ film.realisateur | escape }}",
+    "genre": "{{ film.genre | join: ', ' | escape }}",
+    "content": {{ film.content | strip_html | strip_newlines | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

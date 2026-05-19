@@ -1,0 +1,139 @@
+---
+layout: default
+title: Catalogue
+---
+
+{%- comment -%}
+  Tri : par note décroissante, puis titre alphabétique (A → Z).
+  Liquid sort est stable, donc on inverse le titre d'abord puis on trie par note.
+{%- endcomment -%}
+{% assign sorted_films = site.films | sort: "title" | reverse | sort: "note" | reverse %}
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  Hero / Introduction                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="hero" aria-label="Introduction">
+  <h1>🎬 Cinémathèque</h1>
+  <p class="hero__description">
+    Mon catalogue personnel de films. Je note chaque film que je vois, de 1 à 5.
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  Légende des notes                         -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="rating-legend" aria-label="Légende des notes">
+  <h2>Système de notation</h2>
+  <ul class="rating-legend__list">
+    <li>
+      <span class="rating-legend__stars" aria-hidden="true">★★★★★</span>
+      <span class="rating-legend__label">Incontournable — À voir absolument</span>
+    </li>
+    <li>
+      <span class="rating-legend__stars" aria-hidden="true">★★★★☆</span>
+      <span class="rating-legend__label">Excellent — Très bon film</span>
+    </li>
+    <li>
+      <span class="rating-legend__stars" aria-hidden="true">★★★☆☆</span>
+      <span class="rating-legend__label">Bon moment — Agréable à regarder</span>
+    </li>
+    <li>
+      <span class="rating-legend__stars" aria-hidden="true">★★☆☆☆</span>
+      <span class="rating-legend__label">Pas fou — Rien d'extraordinaire</span>
+    </li>
+    <li>
+      <span class="rating-legend__stars" aria-hidden="true">★☆☆☆☆</span>
+      <span class="rating-legend__label">Mauvais — À éviter</span>
+    </li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  Contrôles : recherche, filtres, tri       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="controls" aria-label="Recherche et filtres">
+
+  <!-- Barre de recherche -->
+  <div class="controls__search">
+    <input
+      type="search"
+      id="search-input"
+      class="search-input"
+      placeholder="Rechercher un film..."
+      aria-label="Rechercher un film"
+    >
+  </div>
+
+  <!-- Filtres par note -->
+  <div class="controls__filters" role="group" aria-label="Filtrer par note">
+    <span class="controls__label">Filtrer :</span>
+    <button class="filter-btn" data-rating="5" aria-label="5 étoiles">★★★★★</button>
+    <button class="filter-btn" data-rating="4" aria-label="4 étoiles">★★★★☆</button>
+    <button class="filter-btn" data-rating="3" aria-label="3 étoiles">★★★☆☆</button>
+    <button class="filter-btn" data-rating="2" aria-label="2 étoiles">★★☆☆☆</button>
+    <button class="filter-btn" data-rating="1" aria-label="1 étoile">★☆☆☆☆</button>
+  </div>
+
+  <!-- Tri -->
+  <div class="controls__sort" role="group" aria-label="Trier les films">
+    <span class="controls__label">Trier par :</span>
+    <button class="sort-btn" data-sort="title">Titre</button>
+    <button class="sort-btn active" data-sort="rating">Note</button>
+    <button class="sort-btn" data-sort="year">Année</button>
+  </div>
+
+  <!-- Compteur de films -->
+  <div class="controls__count">
+    <span id="film-count">{{ sorted_films.size }} film{% if sorted_films.size > 1 %}s{% endif %}</span>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!--  Grille de films                           -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="films-container" aria-label="Catalogue de films">
+  <div class="films-grid">
+    {% for film in sorted_films %}
+    <div
+      class="film-card"
+      data-title="{{ film.title }}"
+      data-director="{{ film.realisateur }}"
+      data-year="{{ film.annee }}"
+      data-rating="{{ film.note }}"
+      data-genre="{{ film.genre | join: ',' }}"
+    >
+      <a href="{{ film.url | relative_url }}" class="film-card__link">
+        <header class="film-card__header">
+          <h2 class="film-card__title">{{ film.title }}</h2>
+
+          {% if film.note %}
+          <span class="film-card__stars" aria-label="Note : {{ film.note }} sur 5">
+            {% for i in (1..5) %}{% if i <= film.note %}★{% else %}☆{% endif %}{% endfor %}
+          </span>
+          {% endif %}
+        </header>
+
+        <p class="film-card__meta">
+          {% if film.annee %}<span class="film-card__year">{{ film.annee }}</span>{% endif %}
+          {% if film.annee and film.realisateur %}<span class="film-card__separator" aria-hidden="true">·</span>{% endif %}
+          {% if film.realisateur %}<span class="film-card__director">{{ film.realisateur }}</span>{% endif %}
+        </p>
+
+        {% if film.genre %}
+        <ul class="film-card__tags" aria-label="Genres">
+          {% for g in film.genre %}
+          <li class="tag">{{ g }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Message affiché quand aucun film ne correspond -->
+  <p id="no-results" class="no-results hidden">
+    Aucun film ne correspond à votre recherche.
+  </p>
+</section>
