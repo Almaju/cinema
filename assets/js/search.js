@@ -6,7 +6,6 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
-
   // ──────────────────────────────────────────────
   // Références aux éléments du DOM
   // ──────────────────────────────────────────────
@@ -46,8 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
     noResults.textContent = "Aucun film ne correspond à votre recherche.";
     noResults.classList.add("hidden");
     // On insère le message juste après le conteneur des cartes, s'il existe
-    const container = document.querySelector(".films-container") ||
-                      (filmCards.length > 0 ? filmCards[0].parentElement : document.body);
+    const container =
+      document.querySelector(".films-grid") ||
+      document.querySelector(".poster-grid") ||
+      (filmCards.length > 0 ? filmCards[0].parentElement : document.body);
     container.appendChild(noResults);
   }
 
@@ -102,7 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const sortType = this.getAttribute("data-sort");
 
       // Mettre à jour l'état visuel des boutons de tri
-      sortButtons.forEach(function (b) { b.classList.remove("active"); });
+      sortButtons.forEach(function (b) {
+        b.classList.remove("active");
+      });
       this.classList.add("active");
 
       sortFilms(sortType);
@@ -168,20 +171,22 @@ document.addEventListener("DOMContentLoaded", function () {
     let visibleCount = 0;
 
     filmCards.forEach(function (card) {
-      const title    = (card.getAttribute("data-title") || "").toLowerCase();
+      const title = (card.getAttribute("data-title") || "").toLowerCase();
       const director = (card.getAttribute("data-director") || "").toLowerCase();
-      const year     = (card.getAttribute("data-year") || "").toLowerCase();
-      const rating   = card.getAttribute("data-rating") || "";
+      const year = (card.getAttribute("data-year") || "").toLowerCase();
+      const rating = card.getAttribute("data-rating") || "";
 
       // — Correspondance texte : le titre, le réalisateur ou l'année contient la requête
-      const matchesQuery = currentQuery === "" ||
+      const matchesQuery =
+        currentQuery === "" ||
         title.indexOf(currentQuery) !== -1 ||
         director.indexOf(currentQuery) !== -1 ||
         year.indexOf(currentQuery) !== -1;
 
       // — Correspondance note : aucun filtre actif ⇒ tout passe ;
       //   sinon la note doit figurer parmi les notes sélectionnées
-      const matchesRating = activeRatings.size === 0 || activeRatings.has(rating);
+      const matchesRating =
+        activeRatings.size === 0 || activeRatings.has(rating);
 
       // Les deux conditions doivent être remplies
       if (matchesQuery && matchesRating) {
@@ -210,7 +215,8 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   function updateCount(count) {
     const total = filmCards.length;
-    filmCount.textContent = count + " / " + total + " film" + (count > 1 ? "s" : "");
+    filmCount.textContent =
+      count + " / " + total + " film" + (count > 1 ? "s" : "");
   }
 
   // ──────────────────────────────────────────────
