@@ -9,6 +9,7 @@ pays: "États-Unis"
 scenario: "Roman d'Anthony Burgess"
 acteurs: "Malcolm McDowell, Patrick Magee"
 imdb: "https://www.imdb.com/title/tt0066921/"
+poster: "https://m.media-amazon.com/images/M/MV5BMTY3MjM1Mzc4N15BMl5BanBnXkFtZTgwODM0NzAxMDE@._V1_SX300.jpg"
 date_watched: "2012-09-10"
 ---
 

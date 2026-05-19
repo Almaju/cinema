@@ -9,6 +9,7 @@ pays: "États-Unis, Allemagne"
 scenario: "Jim Uhls (roman de Chuck Palahniuk)"
 acteurs: "Brad Pitt, Edward Norton, Helena Bonham Carter"
 imdb: "https://www.imdb.com/title/tt0137523/"
+poster: "https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_SX300.jpg"
 date_watched: "2012-08-27"
 ---
 

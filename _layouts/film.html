@@ -4,6 +4,12 @@ layout: default
 
 <article class="film-detail">
 
+  {% if page.poster %}
+  <div class="film-detail__poster">
+    <img src="{{ page.poster }}" alt="Affiche de {{ page.title }}" loading="lazy">
+  </div>
+  {% endif %}
+
   <header class="film-detail__header">
     <h1 class="film-detail__title">{{ page.title }}</h1>
 

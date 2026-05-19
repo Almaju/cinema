@@ -10,6 +10,7 @@ pays: "États-Unis"
 scenario: "D'après D'entre les morts de Pierre Boileau"
 acteurs: "James Stewart, Kim Novak"
 imdb: "https://www.imdb.com/title/tt0052357/"
+poster: "https://m.media-amazon.com/images/M/MV5BNzEyZTUxMWItMGVhYy00Y2NlLTljYTMtYzBmMzI1YmUyMDBkXkEyXkFqcGc@._V1_SX300.jpg"
 date_watched: "2012-09-09"
 ---
 

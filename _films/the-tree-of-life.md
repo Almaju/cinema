@@ -9,6 +9,7 @@ pays: "États-Unis"
 scenario: "Terrence Malick"
 acteurs: "Brad Pitt, Sean Penn, Jessica Chastain"
 imdb: "https://www.imdb.com/title/tt0478304/"
+poster: "https://m.media-amazon.com/images/M/MV5BMTMwNjQ0NjMzN15BMl5BanBnXkFtZTcwNjMxMTkyNA@@._V1_SX300.jpg"
 date_watched: "2012-09-11"
 ---
 

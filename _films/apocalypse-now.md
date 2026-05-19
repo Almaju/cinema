@@ -10,6 +10,7 @@ pays: "États-Unis"
 scenario: "John Milius, Francis Ford Coppola"
 acteurs: "Martin Sheen, Marlon Brando, Robert Duvall"
 imdb: "https://www.imdb.com/title/tt0078788/"
+poster: "https://m.media-amazon.com/images/M/MV5BZDhiMTljYjYtODc1Yy00MmEwLTg2OTYtYmE1YTRmNDE4MmEwXkEyXkFqcGc@._V1_SX300.jpg"
 date_watched: "2012-10-15"
 ---
 

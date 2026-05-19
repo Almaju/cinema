@@ -9,6 +9,7 @@ pays: "États-Unis"
 scenario: "Nick Schenk"
 acteurs: "Clint Eastwood, Bee Vang, Ahney Her"
 imdb: "https://www.imdb.com/title/tt1205489/"
+poster: "https://m.media-amazon.com/images/M/MV5BMTc5NTk2OTU1Nl5BMl5BanBnXkFtZTcwMDc3NjAwMg@@._V1_SX300.jpg"
 date_watched: "2012-10-07"
 ---
 

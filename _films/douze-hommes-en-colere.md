@@ -9,6 +9,7 @@ pays: "États-Unis"
 scenario: "Reginald Rose"
 acteurs: "Henry Fonda, Lee J. Cobb, Martin Balsam"
 imdb: "https://www.imdb.com/title/tt0050083/"
+poster: "https://m.media-amazon.com/images/M/MV5BYjE4NzdmOTYtYjc5Yi00YzBiLWEzNDEtNTgxZGQ2MWVkN2NiXkEyXkFqcGc@._V1_SX300.jpg"
 date_watched: "2013-03-09"
 ---
 

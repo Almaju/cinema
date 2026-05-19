@@ -9,6 +9,7 @@ pays: "États-Unis"
 scenario: "Andy et Larry Wachowski"
 acteurs: "Keanu Reeves, Carrie-Anne Moss, Laurence Fishburne, Hugo Weaving"
 imdb: "https://www.imdb.com/title/tt0133093/"
+poster: "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_SX300.jpg"
 date_watched: "2012-11-21"
 ---
 

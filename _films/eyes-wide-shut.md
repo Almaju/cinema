@@ -9,6 +9,7 @@ pays: "États-Unis"
 scenario: "D'après Traumnovelle d'Arthur Schnitzler"
 acteurs: "Tom Cruise, Nicole Kidman"
 imdb: "https://www.imdb.com/title/tt0120663/"
+poster: "https://m.media-amazon.com/images/M/MV5BZTQ0MmM5MDAtYmYyZS00MzlmLTlhZTAtZDJlZWY5ZTZkZjZmXkEyXkFqcGc@._V1_SX300.jpg"
 date_watched: "2012-09-14"
 ---
 

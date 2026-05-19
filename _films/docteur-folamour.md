@@ -9,6 +9,7 @@ pays: "États-Unis"
 scenario: "Stanley Kubrick (inspiré de Red Alert par Peter George)"
 acteurs: "Peter Sellers (3 rôles)"
 imdb: "https://www.imdb.com/title/tt0057012/"
+poster: "https://m.media-amazon.com/images/M/MV5BMjFjYzBlOTktMTI2OS00ZWVhLTgxMDUtNzAwODY2NmI3YTAzXkEyXkFqcGc@._V1_SX300.jpg"
 date_watched: "2012-08-31"
 ---
 

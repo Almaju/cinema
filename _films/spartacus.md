@@ -9,6 +9,7 @@ pays: "États-Unis"
 scenario: "Dalton Trumbo (roman de Howard Fast)"
 acteurs: "Kirk Douglas, Jean Simmons, Laurence Olivier"
 imdb: "https://www.imdb.com/title/tt0054331/"
+poster: "https://m.media-amazon.com/images/M/MV5BMTcyOThhYzktMTYyMi00NDU5LWExZWMtOWUzNGJiZGFlMWQwXkEyXkFqcGc@._V1_SX300.jpg"
 date_watched: "2012-08-28"
 ---
 

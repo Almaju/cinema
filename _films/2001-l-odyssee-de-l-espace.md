@@ -9,6 +9,7 @@ pays: "États-Unis"
 scenario: "D'après l'œuvre d'Arthur C. Clarke"
 acteurs: "Keir Dullea"
 imdb: "https://www.imdb.com/title/tt0062622/"
+poster: "https://m.media-amazon.com/images/M/MV5BNjU0NDFkMTQtZWY5OS00MmZhLTg3Y2QtZmJhMzMzMWYyYjc2XkEyXkFqcGc@._V1_SX300.jpg"
 date_watched: "2012-09-11"
 ---
 
